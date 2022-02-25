@@ -1,0 +1,9 @@
+<div [className]="'mx-[20vw] my-20'">
+	<app-search-bar [hidden]="loaded"></app-search-bar>
+	<app-loader [hidden]="!loading"></app-loader>
+	<div [hidden]="!loaded">
+		<app-webhook-info-display></app-webhook-info-display>
+		<app-summoner-table></app-summoner-table>
+	</div>
+
+</div>

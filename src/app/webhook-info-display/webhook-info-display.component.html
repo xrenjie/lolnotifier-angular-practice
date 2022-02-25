@@ -1,0 +1,11 @@
+<div [className]="'flex flex-row shadow-lg'">
+	<button [className]="'p-4 w-12'" (click)="handleBack()">
+		<img [className]="'h-8 w-8 col-span-2'" src="../assets/left-arrow.svg" alt="back button">
+	</button>
+	<div [className]="'flex flex-col p-4 w-full'">
+		<h1>{{webhookName}}</h1>
+		<p [className]="'text-xs container hidden lg:[display:block]'">
+			{{webhookUrl}}
+		</p>
+	</div>
+</div>

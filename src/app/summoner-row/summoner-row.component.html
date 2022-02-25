@@ -1,0 +1,26 @@
+<div [className]="'flex flex-row text-lg my-2 gap-2'">
+	<!-- <SummonerInput summonerName={summoner.name} index={index} /> -->
+	<app-summoner-input [summoner]="summoner" [index]="index"></app-summoner-input>
+	<select [className]="'border'" [(ngModel)]="region" (change)="handleChangeRegion()">
+
+		<option *ngFor="let r of regions" value="{{r}}">
+			{{r.toUpperCase()}}
+		</option>
+	</select>
+	<button *ngIf="!confirmDelete" (click)="setConfirmDelete(true)"
+		[className]="'drop-shadow bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded'">
+		X
+	</button>
+
+	<div *ngIf="confirmDelete" [className]="'flex flex-row gap-2'">
+		<button (click)="setConfirmDelete(false);"
+			[className]="'drop-shadow bg-gray-100 hover:bg-gray-200 font-bold py-2 px-4 rounded'">
+			X
+		</button>
+		<button (click)="handleDelete()"
+			[className]="'drop-shadow bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded'">
+			X
+		</button>
+	</div>
+
+</div>

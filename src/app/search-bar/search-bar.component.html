@@ -1,0 +1,20 @@
+<form [className]="'lg:grid-cols-8 lg:grid flex flex-col'" [formGroup]="webhookForm"
+	(ngSubmit)=" $event.preventDefault(); onSubmit($event)">
+	<div [className]="'lg:col-span-7 flex flex-row drop-shadow-md'">
+		<input type="text"
+			[ngClass]="{'focus:outline-none focus:bg-gray-200 w-full text-xl border-none p-2': true, 'bg-red-100': webhookError}"
+			placeholder="Discord webhook (e.g. https://discord.com/api/webhooks/blahblahblah/blahblahblah"
+			[attr.disabled]="false" formControlName="webhookInputUrl">
+
+		<a href="https://support.discord.com/hc/en-us/articles/228383668-Intro-to-Webhooks#:~:text=%C2%A0%20Facebook-,MAKING%20A%20WEBHOOK,-With%20that%20in"
+			target="_blank" rel="noreferrer" [className]="'border-0 text-xl col-span-1 p-2'">
+			<img [className]="'h-8 w-8 col-span-2'" src="../assets/question-mark-circle.svg"
+				alt="click for help with discord webhooks">
+		</a>
+	</div>
+	<button
+		[ngClass]="{'bg-blue-500 drop-shadow-md hover:bg-blue-600 text-white text-xl lg:col-span-1 py-2 px-8 justify-self-end': true, 'bg-gray-300 hover:bg-gray-300': loading}">
+		Find
+	</button>
+
+</form>
